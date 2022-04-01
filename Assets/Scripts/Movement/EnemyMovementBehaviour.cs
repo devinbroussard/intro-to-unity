@@ -8,6 +8,8 @@ public class EnemyMovementBehaviour : MovementBehaviour
     private Transform _target;
     [SerializeField]
     private float _speed;
+    [SerializeField]
+    private float _damageAmount; //The amount of damage this actor does to the target
 
     /// <summary>
     /// The game object the enemy will seek
@@ -34,7 +36,7 @@ public class EnemyMovementBehaviour : MovementBehaviour
             //If the target has a GoalBehaviour script...
             if (goal)
             {
-                goal.EnemyCount++;
+                goal.TakeDamage(_damageAmount);
             }
             //..Destroy this game object
             Destroy(gameObject);
