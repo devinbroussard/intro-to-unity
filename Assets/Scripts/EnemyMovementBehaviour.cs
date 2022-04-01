@@ -30,7 +30,7 @@ public class EnemyMovementBehaviour : MovementBehaviour
         //If the other collider matches the transform...
         if (other.transform == _target)
         {
-            GoalBehaviour goal = gameObject.GetComponent<GoalBehaviour>();
+            GoalBehaviour goal = other.GetComponent<GoalBehaviour>();
             //If the target has a GoalBehaviour script...
             if (goal)
             {

@@ -20,9 +20,11 @@ public class GoalBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (_enemyCount > _health)
+        if (_enemyCount >= _health)
         {
-            GetComponent<MeshRenderer>().material = FailureMaterial;
+            MeshRenderer renderer = GetComponent<MeshRenderer>();
+            if (renderer)
+                renderer.material = FailureMaterial;
         }
     }
 }
