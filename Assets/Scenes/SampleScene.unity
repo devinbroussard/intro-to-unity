@@ -1115,6 +1115,10 @@ PrefabInstance:
       propertyPath: _bullet
       value: 
       objectReference: {fileID: -7181971096379299089, guid: 46d62057966e85b47afccece680b9ecb, type: 3}
+    - target: {fileID: 5085211249924857475, guid: 4b3bea01aa4d7724bb776cdd1618a49c, type: 3}
+      propertyPath: _bulletForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8321445650583543012, guid: 4b3bea01aa4d7724bb776cdd1618a49c, type: 3}
       propertyPath: m_RootOrder
       value: 9

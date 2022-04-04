@@ -26,12 +26,12 @@ public class BulletEmitterBehaviour : MonoBehaviour
     public void Fire()
     {
         //Creates a new bullet and adds it to the scene
-        GameObject bullet = Instantiate(_bullet.gameObject, transform.position, Quaternion.identity);
+        GameObject bullet = Instantiate(_bullet.gameObject, transform.position, transform.rotation);
         BulletBehaviour bulletBehaviour = bullet.GetComponent<BulletBehaviour>();
         //Sets the bullet's tag to be the tag of its owner
         bulletBehaviour.OwnerTag = _owner.tag;
         //Adds the bullet force to the bullet
-        bulletBehaviour.Rigidbody.AddForce(_owner.transform.forward * _bulletForce, ForceMode.Impulse);
+        bulletBehaviour.Rigidbody.AddForce(transform.forward * _bulletForce, ForceMode.Impulse);
     }
     
 }
