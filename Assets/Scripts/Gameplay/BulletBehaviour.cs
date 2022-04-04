@@ -4,9 +4,26 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    private string _ownerTag; //The bullet's owner
+    /// <summary>
+    /// The tag of the bullet's owner
+    /// </summary>
+    private string _ownerTag;
     [SerializeField]
     private float _damageAmount; //The damage this bullet does to objects
+
+    /// <summary>
+    /// The life time of the bullet
+    /// </summary>
+    [SerializeField]
+    private float _lifeTime;
+    private float _currentLifeTime;
+
+    /// <summary>
+    /// Whether or not this bullet should be destroyed on collision
+    /// </summary>
+    [SerializeField]
+    private bool _destroyOnHit;
+
     private Rigidbody _rigidbody; //The bullet's rigid body component
 
     public string OwnerTag { get => _ownerTag; set => _ownerTag = value; }
@@ -28,5 +45,20 @@ public class BulletBehaviour : MonoBehaviour
             return;
 
         otherHealth.TakeDamage(_damageAmount);
+
+        if (_destroyOnHit)
+            Destroy(gameObject);
+    }
+
+    /// <summary>
+    /// Destroys the bullet when 
+    /// </summary>
+    private void Update()
+    {
+        _currentLifeTime += Time.deltaTime;
+
+        if (_currentLifeTime >= _lifeTime)
+            Destroy(gameObject);
     }
 }
+

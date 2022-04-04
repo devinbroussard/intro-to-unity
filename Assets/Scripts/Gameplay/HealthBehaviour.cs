@@ -6,7 +6,6 @@ public class HealthBehaviour : MonoBehaviour
 {
     [SerializeField]
     private float _health;
-    [SerializeField]
     private bool _isAlive;
     [SerializeField]
     private bool _destroyOnDeath;

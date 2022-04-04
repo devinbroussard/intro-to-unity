@@ -113,7 +113,7 @@ MonoBehaviour:
   _firingCooldown: 1
   _firingTimer: 0
   _ammo: 10
-  _infiniteAmmo: 0
+  _infiniteAmmo: 1
 --- !u!1 &6859905777757737473
 GameObject:
   m_ObjectHideFlags: 0
